@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private dbService: DbService) {
+    console.log('constructor');
     dbService.initBookList();
   }
 
@@ -30,9 +31,11 @@ export class AppComponent implements OnInit {
   }
 
   removeBook(book: Book) {
+    console.log(book);
     this.dbService.remove(book);
   }
   editBook(book: Book) {
+    console.log(book);
     this.dbService.edit(book);
   }
 }

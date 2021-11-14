@@ -8,7 +8,7 @@
     <div class="col-md-2">
       <img src="{{book?.image}}" class="img-fluid rounded-start" alt="...">
     </div>
-    <div class="col-md-10">
+    <div class="col-md-8">
       <div class="row">
         <div class="card-body">
           <h5 class="card-title">{{book?.title}}</h5>
@@ -16,8 +16,18 @@
           <p class="card-text">{{book?.desc}}</p>
         </div>
       </div>
-      <div class="card-footer">
-        <button style="position:absolute;">Card footer</button>
+    </div>
+    <div class="col-md-2" style="background-color: lightgrey">
+      <div class="card-body">
+        <div>
+          <h4>Cena:</h4>
+          <h5>{{book?.price}}</h5>
+        </div>
+        <div>
+          <hr>
+          <button type="button" class="btn btn-dark custom-button-left" (click)="editBook(book)">Zmień</button>
+          <button type="button" class="btn btn-dark custom-button-right" (click)="deleteBook(book)">Usuń</button>
+        </div>
       </div>
     </div>
   </div>

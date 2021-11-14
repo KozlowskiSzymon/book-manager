@@ -1,0 +1,27 @@
+.bottom-add {
+  position:absolute;
+  bottom: 5px;
+}
+
+.custom-navbar-container {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+
+.custom-sidebar-container {
+  z-index: 1;
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 6vh;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar-item {
+  padding-bottom: 10px;
+}
