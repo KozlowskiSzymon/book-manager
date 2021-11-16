@@ -1,0 +1,21 @@
+.form-label {
+  padding: 5px 10px 5px 10px;
+  width: 30%;
+}
+.form-input {
+  width: 70%;
+}
+
+.custom-button-left {
+  position:absolute;
+  bottom: 5px;
+  left: 5px;
+  width: 40%;
+}
+
+.custom-button-right {
+  position:absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 40%;
+}

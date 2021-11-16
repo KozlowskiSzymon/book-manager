@@ -4,7 +4,7 @@ export interface Book {
   author: string;
   desc: string;
   type: string;
-  part?: string;
+  available: boolean;
   image: string;
   price: string;
 }

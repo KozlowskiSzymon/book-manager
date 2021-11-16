@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Formularz</h2>
+<mat-dialog-content [formGroup]="bookForm">
+  <div>
+    <label for="title" class="form-label">Tytuł:</label>
+    <input id="title" name="title" class="form-input" placeholder="Tytuł" formControlName="title">
+  </div>
+  <div>
+    <label for="author" class="form-label">Autor:</label>
+    <input id="author" name="author" class="form-input" placeholder="Autor" formControlName="author">
+  </div>
+  <div>
+    <label for="desc" class="form-label">Opis:</label>
+    <input id="desc" name="desc" class="form-input" placeholder="Opis" formControlName="desc">
+  </div>
+  <div>
+    <label for="type" class="form-label">Gatunek:</label>
+    <input id="type" name="type" class="form-input" placeholder="Gatunek" formControlName="type">
+  </div>
+  <div>
+    <label for="price" class="form-label">Cena:</label>
+    <input id="price" name="price" class="form-input" placeholder="Cena" formControlName="price">
+  </div>
+  <div>
+    <label for="image" class="form-label">Zdjęcie:</label>
+    <input id="image" name="image" class="form-input" placeholder="Zdjęcie" formControlName="image">
+  </div>
+</mat-dialog-content>
+<div>
+  <hr>
+  <div style="display:flex;">
+    <div align="start" style="width: 50%">
+      <button class="btn btn-secondary" (click)="close()">Zamknij</button>
+    </div>
+    <div align="end" style="width: 50%">
+      <button type="submit" class="btn btn-primary" (click)="save()">Zapisz</button>
+    </div>
+  </div>
+</div>
