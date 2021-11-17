@@ -17,7 +17,8 @@ export class BookFormComponent implements OnInit {
     desc: '',
     type: '',
     price: '',
-    image: ''
+    image: '',
+    available: true
   });
   constructor(private formBuilder: FormBuilder,
               private dialogRef: MatDialogRef<BookFormComponent>,

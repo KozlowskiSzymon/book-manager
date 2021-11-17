@@ -23,6 +23,9 @@
         <div>
           <h4>Cena:</h4>
           <h5>{{book?.price}}</h5>
+          <hr>
+          <h6 *ngIf="book?.available">Dostępna</h6>
+          <h6 *ngIf="!book?.available" style="color: red">Niedostępna</h6>
         </div>
         <div>
           <hr>
