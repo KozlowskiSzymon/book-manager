@@ -2,8 +2,9 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {Book} from "../book/model/book";
 import {DbService} from "../../db/db.service";
 import {FormBuilder} from "@angular/forms"
-import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialog} from '@angular/material/dialog';
 import {BookFormComponent} from "../book-form/book-form.component";
+import {BookService} from "../book/service/book.service";
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,7 @@ export class AppComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private dbService: DbService,
+    private bookService: BookService,
     private dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     dbService.initBookList();
@@ -41,7 +43,9 @@ export class AppComponent implements OnInit {
   }
 
   loadBooks() {
-    this.books = this.dbService.getBooks();
+    this.bookService.getAllBooks().subscribe(
+      result => this.books = result
+    );
   }
 
   getAllBooks(): Book[] {
@@ -80,7 +84,7 @@ export class AppComponent implements OnInit {
     let priceFrom = this.filterForm.value.priceFrom !== '' ? this.filterForm.value.priceFrom : 0;
 
     this.books = this.getAllBooks().filter(book => book.title.toLowerCase().includes(filter)
-      || book.desc.toLowerCase().includes(filter)
+      || book.description.toLowerCase().includes(filter)
       || book.author.toLowerCase().includes(filter)
       || book.type.toLowerCase().includes(filter))
 

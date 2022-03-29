@@ -7,6 +7,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { BookFormComponent } from './components/book-form/book-form.component';
 import {MAT_DIALOG_DATA, MatDialogConfig, MatDialogModule} from "@angular/material/dialog";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
+import {BookService} from "./components/book/service/book.service";
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BookModule,
     ReactiveFormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [
     { provide: MAT_DIALOG_DATA, useValue: {} },
     { provide: MatDialogConfig, useValue: {} },
+    BookService
   ],
   bootstrap: [AppComponent]
 })

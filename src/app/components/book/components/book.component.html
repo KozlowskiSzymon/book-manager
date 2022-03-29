@@ -14,7 +14,7 @@
           <h5 class="card-title">{{book?.title}}</h5>
           <h6 class="card-title">{{book?.author}}</h6>
           <p class="card-text"><small class="text-muted">{{book?.type}}</small></p>
-          <p class="card-text">{{book?.desc}}</p>
+          <p class="card-text">{{book?.description}}</p>
         </div>
       </div>
     </div>
@@ -29,8 +29,7 @@
         </div>
         <div>
           <hr>
-          <button type="button" class="btn btn-dark custom-button-left" (click)="editBook(book)">Zmień</button>
-          <button type="button" class="btn btn-dark custom-button-right" (click)="deleteBook(book)">Usuń</button>
+          <button type="button" class="btn btn-dark custom-button-bottom" (click)="orderBook()">Zamów</button>
         </div>
       </div>
     </div>

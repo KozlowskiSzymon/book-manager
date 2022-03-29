@@ -1,14 +1,5 @@
-.custom-button-left {
+.custom-button-bottom {
   position:absolute;
   bottom: 5px;
-  left: 5px;
-  width: 40%;
-}
-
-.custom-button-right {
-  position:absolute;
-  bottom: 5px;
-  right: 5px;
-  width: 40%;
 }
 
