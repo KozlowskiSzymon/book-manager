@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
   title = 'book-manager';
 
   books: Book[] = [];
-  allBooks: Book[] = [];
 
   sortForm = this.formBuilder.group({
     name: false,
@@ -45,13 +44,8 @@ export class AppComponent implements OnInit {
     this.bookService.getAllBooks().subscribe(
       result => {
         this.books = result;
-        this.allBooks = result;
       }
     );
-  }
-
-  getAllBooks(): Book[] {
-    return this.allBooks;
   }
 
   addBook() {
@@ -90,13 +84,18 @@ export class AppComponent implements OnInit {
     let priceTo = this.filterForm.value.priceTo !== '' ? this.filterForm.value.priceTo : 9999999;
     let priceFrom = this.filterForm.value.priceFrom !== '' ? this.filterForm.value.priceFrom : 0;
 
-    this.books = this.getAllBooks().filter(book => book.title.toLowerCase().includes(filter)
-      || book.description.toLowerCase().includes(filter)
-      || book.author.toLowerCase().includes(filter)
-      || book.type.toLowerCase().includes(filter))
-
-    this.books = this.books.filter(book => priceFrom <= parseFloat(book.price.substr(0, book.price.length - 3))
-      && parseFloat(book.price.substr(0, book.price.length - 3)) <= priceTo)
+    this.bookService.getAllBooks().subscribe(
+      result => {
+        this.books = result.filter(book => (book.title.toLowerCase().includes(filter)
+          || book.description.toLowerCase().includes(filter)
+          || book.author.toLowerCase().includes(filter)
+          || book.genre.toLowerCase().includes(filter)));
+        this.books = this.books.filter(book =>
+          priceFrom <= parseFloat(book.price.substr(0, book.price.length - 3))
+              && parseFloat(book.price.substr(0, book.price.length - 3)) <= priceTo
+          );
+      }
+    );
   }
 
   sort(arg: string, checked: boolean) {
