@@ -49,10 +49,13 @@ export class AppComponent implements OnInit {
   }
 
   addBook() {
-    this.openDialog(null).afterClosed().subscribe(result => {
-      this.bookService.save(result);
-      this.loadBooks();
-    });
+    this.openDialog(null, ).afterClosed().subscribe(result => {
+      if (result !== undefined) {
+        this.bookService.save(result).subscribe(
+          () => this.loadBooks()
+        );
+      }
+    })
   }
 
   removeBook(book: Book) {
@@ -63,10 +66,11 @@ export class AppComponent implements OnInit {
   }
   editBook(book: Book) {
     this.openDialog(book).afterClosed().subscribe(result => {
-      this.bookService.save(result).subscribe(
-        () => this.loadBooks()
-      );
-
+      if (result !== undefined) {
+        this.bookService.save(result).subscribe(
+          () => this.loadBooks()
+        );
+      }
     })
   }
 
@@ -74,12 +78,13 @@ export class AppComponent implements OnInit {
     return this.dialog.open(BookFormComponent, {
       disableClose: true,
       autoFocus: true,
-      data: book
+      data: book,
+      height: '50%',
+      width: '60%'
     })
   }
 
   filter() {
-    console.log(this.filterForm.value.filter.toLowerCase())
     let filter = this.filterForm.value.filter.toLowerCase();
     let priceTo = this.filterForm.value.priceTo !== '' ? this.filterForm.value.priceTo : 9999999;
     let priceFrom = this.filterForm.value.priceFrom !== '' ? this.filterForm.value.priceFrom : 0;
