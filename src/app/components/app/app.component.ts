@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   title = 'book-manager';
 
   books: Book[] = [];
+  allBooks: Book[] = [];
 
   sortForm = this.formBuilder.group({
     name: false,
@@ -31,7 +32,6 @@ export class AppComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private dbService: DbService,
     private bookService: BookService,
     private dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -43,12 +43,15 @@ export class AppComponent implements OnInit {
 
   loadBooks() {
     this.bookService.getAllBooks().subscribe(
-      result => this.books = result
+      result => {
+        this.books = result;
+        this.allBooks = result;
+      }
     );
   }
 
   getAllBooks(): Book[] {
-    return this.dbService.getBooks();
+    return this.allBooks;
   }
 
   addBook() {
@@ -82,6 +85,7 @@ export class AppComponent implements OnInit {
   }
 
   filter() {
+    console.log(this.filterForm.value.filter.toLowerCase())
     let filter = this.filterForm.value.filter.toLowerCase();
     let priceTo = this.filterForm.value.priceTo !== '' ? this.filterForm.value.priceTo : 9999999;
     let priceFrom = this.filterForm.value.priceFrom !== '' ? this.filterForm.value.priceFrom : 0;
