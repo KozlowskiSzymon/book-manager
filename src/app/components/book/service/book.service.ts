@@ -16,4 +16,11 @@ export class BookService {
     return this.http.get<Book>(this.basicUrl + id);
   }
 
+  save(book: Book) {
+    return this.http.post(this.basicUrl + 'save', book);
+  }
+
+  remove(book: Book) {
+    return this.http.delete(this.basicUrl + book.id);
+  }
 }

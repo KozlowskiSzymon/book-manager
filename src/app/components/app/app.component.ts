@@ -35,7 +35,6 @@ export class AppComponent implements OnInit {
     private bookService: BookService,
     private dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any) {
-    dbService.initBookList();
   }
 
   ngOnInit(): void {
@@ -54,19 +53,23 @@ export class AppComponent implements OnInit {
 
   addBook() {
     this.openDialog(null).afterClosed().subscribe(result => {
-      this.dbService.add(result);
+      this.bookService.save(result);
       this.loadBooks();
     });
   }
 
   removeBook(book: Book) {
-    this.dbService.remove(book);
-    this.loadBooks();
+    this.bookService.remove(book).subscribe(
+      () => this.loadBooks()
+    );
+
   }
   editBook(book: Book) {
     this.openDialog(book).afterClosed().subscribe(result => {
-      this.dbService.edit(result);
-      this.loadBooks();
+      this.bookService.save(result).subscribe(
+        () => this.loadBooks()
+      );
+
     })
   }
 

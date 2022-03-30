@@ -15,8 +15,13 @@ export class BookComponent {
   @Output()
   delete = new EventEmitter<Book>();
 
-  orderBook() {
-    console.log('Zamawianie dosepne już wkrótce!')
+  editBook(book: Book | undefined) {
+    this.edit.emit(book);
   }
+
+  deleteBook(book: Book | undefined) {
+    this.delete.emit(book);
+  }
+
 
 }
