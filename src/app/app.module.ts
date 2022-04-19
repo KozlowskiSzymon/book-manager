@@ -9,11 +9,16 @@ import {MAT_DIALOG_DATA, MatDialogConfig, MatDialogModule} from "@angular/materi
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
 import {BookService} from "./components/book/service/book.service";
+import { AppRoutingModule } from './app-routing.module';
+import { InfoComponent } from './components/info/info.component';
+import { BookListComponent } from './components/book-list/book-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookFormComponent
+    BookFormComponent,
+    InfoComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +26,8 @@ import {BookService} from "./components/book/service/book.service";
     ReactiveFormsModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     { provide: MAT_DIALOG_DATA, useValue: {} },

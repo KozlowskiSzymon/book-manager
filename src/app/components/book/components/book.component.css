@@ -1,13 +1,21 @@
-.custom-button-left {
+.book-row-custom-button-left {
   position:absolute;
   bottom: 5px;
   left: 5px;
   width: 40%;
 }
 
-.custom-button-right {
+.book-row-custom-button-right {
   position:absolute;
   bottom: 5px;
   right: 5px;
   width: 40%;
+}
+
+.book-row-actions {
+  background-color: lightgrey;
+}
+
+.book-unavailable {
+  color: red;
 }

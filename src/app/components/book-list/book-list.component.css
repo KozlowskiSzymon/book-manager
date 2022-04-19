@@ -1,0 +1,59 @@
+.bottom-add {
+  position:absolute;
+  bottom: 5px;
+}
+.inline {
+  display: inline-block;
+}
+
+.sort-option {
+  margin-left: 10px;
+}
+
+.add-book-btn {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.book-list {
+  padding: 20px 20px 20px 20px;
+}
+
+.price-filter-input {
+  width: 25%;
+}
+
+.text-white {
+  color: lightgray!important;
+}
+
+.filter-submit-button {
+  width: 100%;
+  margin-top: 15px
+}
+
+.price-filter-box {
+  horiz-align: left;
+}
+
+.filter-margins {
+  margin-bottom: 15px;
+  width: 75%;
+}
+
+.custom-sidebar-container {
+  z-index: 1;
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 6vh;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar-item {
+  padding-bottom: 10px;
+}

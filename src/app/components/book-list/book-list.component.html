@@ -1,0 +1,51 @@
+<div class="main">
+  <div class="col-md-2 text-white bg-dark custom-sidebar-container">
+    <hr>
+    <h5>Filtry</h5>
+    <h6>Szukaj:</h6>
+    <form [formGroup]="filterForm" (ngSubmit)="filter()">
+      <input id="filter" formControlName="filter" class="filter-margins" type="text" placeholder="Szukana fraza">
+      <h6>Cena:</h6>
+      <div class="price-filter-box">
+        Od:
+        <input id="priceFrom" formControlName="priceFrom" type="text" class="price-filter-input">
+        Do:
+        <input id="priceTo" formControlName="priceTo" type="text" class="price-filter-input">
+      </div>
+      <button type="submit" class="btn btn-primary filter-submit-button">Filtruj</button>
+    </form>
+    <hr>
+    <h5>Sortowanie</h5>
+    <form [formGroup]="sortForm">
+      <div>
+        <input id="name" type="checkbox" formControlName="name" (click)="sort('name', $any($event.target).checked)">
+        <label class="sort-option" for="name">Nazwa</label>
+      </div>
+      <div>
+        <input id="author" type="checkbox" formControlName="author" (click)="sort('author', $any($event.target).checked)">
+        <label class="sort-option" for="author">Autor</label>
+      </div>
+      <div>
+        <input id="price" type="checkbox" formControlName="price" (click)="sort('price', $any($event.target).checked)">
+        <label class="sort-option" for="price">Cena</label>
+      </div>
+      <div>
+        <input id="available" type="checkbox" formControlName="available" (click)="sort('available', $any($event.target).checked)">
+        <label class="sort-option" for="available">Dostępność</label>
+      </div>
+    </form>
+    <hr>
+    <button type="button" class="btn btn-primary add-book-btn" (click)="addBook()">Dodaj książkę</button>
+  </div>
+  <div class="col-md-10">
+    <div class="book-list">
+      <div *ngFor="let book of books">
+        <app-book
+          [book]="book"
+          (edit)="editBook($event)"
+          (delete)="removeBook($event)"
+        ></app-book>
+      </div>
+    </div>
+  </div>
+</div>

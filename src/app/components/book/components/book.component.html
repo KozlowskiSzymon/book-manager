@@ -18,19 +18,19 @@
         </div>
       </div>
     </div>
-    <div class="col-md-2" style="background-color: lightgrey">
+    <div class="col-md-2 book-row-actions">
       <div class="card-body">
         <div>
           <h4>Cena:</h4>
           <h5>{{book?.price}}</h5>
           <hr>
           <h6 *ngIf="book?.available">Dostępna</h6>
-          <h6 *ngIf="!book?.available" style="color: red">Niedostępna</h6>
+          <h6 *ngIf="!book?.available" class="book-unavailable">Niedostępna</h6>
         </div>
         <div>
           <hr>
-          <button type="button" class="btn btn-dark custom-button-left" (click)="editBook(book)">Zmień</button>
-          <button type="button" class="btn btn-dark custom-button-right" (click)="deleteBook(book)">Usuń</button>
+          <button type="button" class="btn btn-dark book-row-custom-button-left" (click)="editBook(book)">Zmień</button>
+          <button type="button" class="btn btn-dark book-row-custom-button-right" (click)="deleteBook(book)">Usuń</button>
         </div>
       </div>
     </div>

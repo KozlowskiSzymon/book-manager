@@ -1,6 +1,8 @@
-.bottom-add {
-  position:absolute;
-  bottom: 5px;
+
+.name-header {
+  display: inherit;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
 .custom-navbar-container {
@@ -9,19 +11,11 @@
   top: 0;
 }
 
-.custom-sidebar-container {
-  z-index: 1;
-  height: 100vh;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 6vh;
+.navbar-tabs {
+  width: 100%;
+  display: inline-flex;
 }
 
-.main {
-  display: flex;
-  justify-content: space-between;
-}
-
-.sidebar-item {
-  padding-bottom: 10px;
+.text-white {
+  color: white;
 }
