@@ -1,3 +1,111 @@
-<div class="col-md 8">
-  <p>ooooooooooooooooooooooooooo</p>
+<div class="about-section">
+  <h1>About Us</h1>
+  <p>Strona powstała w ramach projektu zaliczeniowego z przedmiotu Architektury i Technologie Systemów Internetowych.</p>
+  <p>Book Manager to prosty system do zarządzania zasobami biblioteki lub księgarni internetowej. Pozwala na dodawanie, usuwanie, edycję książek
+    oraz wyszukiwanie ich w systemie dzięki filtrom.<br> Sortowanie elementów ułatwia przeglądanie dużych zbiorów.
+  </p>
+</div>
+<div class="text-section">
+  <h2 class="text-center">Założenia projektowe</h2>
+  <p>
+    Głównym założeniem projektu było stworzenie strony internetowej przy pomocy języka HTML 5 i CSS oraz technologi pomocnych w tworzeniu takowych(wedle uznania). <br>
+    Część frontendowa serwisu została stworzona przy pomocy frameworka Angular 10. Decyzja ta została podjęta z uwagi na już posiadany przez autora projekt serwisu. <br>
+    Jest to popularna praktyka ponownego wykorzystania gotowych komponentów. Strona korzysta z backendowego serwisu napisanego w języku Java 11. <br>
+    Serwis ten połączony jest z bazą danych H2 ,która zawiera wstępny zbiór książek w celach prezentacyjnch.<br>
+    Webserwisy umożliwiają pobieranie, dodawanie, usuwanie i edycję przedmiotów w bazie danych.<br>
+    Baza danych H2 działa w trybie <em>in-memory</em>. Co oznacza, że powstaje w momencie zbudowania aplikacji. Nie posiada oddzielnej instancji. <br>
+    W przypadku zrestartowania aplikacji baza danych skasuje się i stworzy od nowa, czyli straci wszystkie dane i zostanie zainicjowana zestawem startowym.<br>
+    Wybór takiego trybu został podyktowany łatwością użycia oraz niewielkim zapotrzebowaniem na zasoby systemowe.
+  </p>
+  <p>
+    Wielkość serwisu została dobra tak, aby pokazać zastosowanie nawigacji globalnej(header na górze strony) oraz brak nawigacji lokalnej. Zawartość strony nie przytłacza użytkownika.<br>
+    Nie zostały wykorzystane żadne "zaślepki" i "zapychacze", ponieważ autor uznał, że nawet w pokazowym modelu wygląda to mało zachęcająco a strona sama wygląda na nieukończoną.
+  </p>
+  <p>
+    Zawartość serwisu została wystawiona przy pomocy Google Cloud Platform. Aplikacja jest wystawiona jako kontenery w kubernetesowym klastrze.
+  </p>
+</div>
+<h2 class="text-center">Użyte technologie</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <div class="card-image-box">
+        <img src="https://dhirajkumarsingh.files.wordpress.com/2012/05/css3-html5-logo-initial.png" alt="html5" class="card-image">
+      </div>
+      <div class="container">
+        <h2>HTML 5</h2>
+        <p>Najpopularniejszy język znaczników do tworzenia stron internetowych.</p>
+      </div>
+    </div>
+  </div>
+
+    <div class="column">
+      <div class="card">
+        <div class="card-image-box">
+          <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png?w=360" alt="css" class="card-image">
+        </div>
+        <div class="container">
+          <h2>Css</h2>
+          <p>Kaskadowe arkusze stylów - podstawowy język opisu prezentacji strony.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <div class="card-image-box">
+          <img src="https://www.h2database.com/html/images/h2-logo-2.png" alt="Baza H2" class="card-image">
+        </div>
+        <div class="container">
+          <h2>Baza danych H2</h2>
+          <p>Najprostsza w użyciu. Kompatybilna z niemal każdym językiem programowania.</p>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <div class="card-image-box">
+        <img src="https://avatars.githubusercontent.com/u/2810941?s=280&v=4" alt="GCP" class="card-image">
+      </div>
+      <div class="container">
+        <h2>Google Cloud Platform</h2>
+        <p>Chmura Google. Pierwszy dystrybutor na terenie Polski.</p>
+      </div>
+    </div>
+  </div>
+
+    <div class="column">
+      <div class="card">
+        <div class="card-image-box">
+          <img src="https://logos-download.com/wp-content/uploads/2016/10/Java_logo_icon-700x392.png" alt="Java 11" class="card-image">
+        </div>
+        <div class="container">
+          <h2>Java 11</h2>
+          <p>Język programowania, popularny przy tworzeniu webserwisów.</p>
+        </div>
+      </div>
+    </div>
+
+  <div class="column">
+    <div class="card">
+      <div class="card-image-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="Angular" class="card-image">
+      </div>
+      <div class="container">
+        <h2>Angular 10</h2>
+        <p>Framework Java Scriptu wykorzystany przy tworzeniu frontendu.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="about-section">
+  <h1>O autorze</h1>
+  <p><strong>Frontend GitHub: </strong><a href="https://github.com/KozlowskiSzymon/book-manager">https://github.com/KozlowskiSzymon/book-manager</a></p>
+  <p><strong>Backend GitHub: </strong><a href="https://github.com/KozlowskiSzymon/book-manager-service">https://github.com/KozlowskiSzymon/book-manager-service</a></p>
+  <p><strong>Frontend DockerHub: </strong></p>
+  <p><strong>Backend DockerHub: </strong></p>
 </div>
