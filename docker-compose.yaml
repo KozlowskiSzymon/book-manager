@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  web:
+    image: szymon2kozlowski/book-manager:2.1-SNAPSHOT
+    ports:
+      - "8000:80"
+  service:
+    image: szymon2kozlowski/book-manager-service:1.2-SNAPSHOT
+    ports:
+      - "8080:8080"
