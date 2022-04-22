@@ -7,7 +7,7 @@ import {environment} from "../../../../environments/environment";
 export class BookService {
 
   constructor(private http: HttpClient) { }
-  basicUrl = environment.API_URL;
+  basicUrl = 'http://localhost:8080';
   urlSuff = '/book/'
 
   getAllBooks() {
